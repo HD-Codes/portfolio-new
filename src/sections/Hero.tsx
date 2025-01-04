@@ -66,7 +66,7 @@ export const HeroSection = () => {
         <div className='max-w-lg mx-auto'>
           <h1 className='font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide'> Building Secure and Scalable Software</h1>
           <p className='mt-4 text-center text-white/60 md:text-lg'>
-          As an experienced software engineer, I specialize in developing secure, high-performing applications using modern technologies like Java, Spring Boot, and Docker. Let's create solutions that drive success and innovation together.
+          As an experienced software engineer, I specialize in developing secure, high-performing applications using modern technologies like Java, Spring Boot, and Docker. Let&apos;s create solutions that drive success and innovation together.
           </p>
         </div>
         <div className='flex flex-col md:flex-row justify-center items-center mt-8 gap-4'>
@@ -76,7 +76,7 @@ export const HeroSection = () => {
           </button>
           <button className='inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl'>
             <span>👋</span>
-            <span className='font-semibold'>Let's Connect</span>
+            <span className='font-semibold'>Let&apos;s Connect</span>
           </button>
         </div>
       </div>

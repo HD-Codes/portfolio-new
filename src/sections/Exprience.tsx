@@ -5,76 +5,82 @@ import WorkIcon from "@/assets/icons/work.svg";
 import SchoolIcon from "@/assets/icons/school.svg";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { SectionHeader } from "@/components/SectionHeader";
+import { Card } from "@/components/Card";
+import { color } from "framer-motion";
 
 interface TimelineElement {
   id: number;
   title: string;
   location: string;
   description: string;
-  buttonText?: string;
   date: string;
   icon: "work" | "school";
 }
 
 const timelineElements: TimelineElement[] = [
-  {
-    id: 1,
-    title: "Frontend Developer",
-    location: "Dragontail, Ascana",
-    description:
-      "Converting data to a graphical interface, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that data.",
-    buttonText: "View Frontend Projects",
-    date: "August 2016 - present",
-    icon: "work",
-  },
-  {
-    id: 2,
-    title: "Backend Developer",
-    location: "Skystead, Craonia",
-    description:
-      "Working hand-in-hand with front-end developers by providing the outward-facing web application elements server-side logic.",
-    buttonText: "View Backend Projects",
-    date: "June 2013 - August 2016",
-    icon: "work",
-  },
-  {
-    id: 3,
-    title: "Quality Assurance Engineer",
-    location: "South Warren, Geshington",
-    description:
-      "Assessing the quality of specifications and technical design documents to ensure timely, relevant, and meaningful feedback.",
-    buttonText: "Company Website",
-    date: "September 2011 - June 2013",
-    icon: "work",
-  },
-  {
-    id: 4,
-    title: "Oak Ridge College",
-    location: "South Warren, Geshington",
-    description:
-      "Online Course in Magical Beasts and Wonders of the World.",
-    buttonText: "Course Certificate",
-    date: "September 2011",
-    icon: "school",
-  },
-  {
-    id: 5,
-    title: "Hawking College",
-    location: "Skystead, Craonia",
-    description:
-      "College education in technology and sciences.",
-    buttonText: "College Projects",
-    date: "2007 - 2011",
-    icon: "school",
-  },
-  {
-    id: 6,
-    title: "Marble Hills Grammar School",
-    location: "Dragontail, Ascana",
-    description: "High school education focusing on sciences and mathematics.",
-    date: "2003 - 2007",
-    icon: "school",
-  },
+    {
+        id: 1,
+        title: "Software Engineer",
+        location: "KGS Technology Group, Tempe, AZ",
+        description:
+          "Enhanced search functionality and product recommendations by integrating caching mechanisms, resulting in a 25% improvement in query response times. Resolved critical payment gateway and session management issues to improve user experience and reliability.",
+        date: "July 2024 - Present",
+        icon: "work",
+      },
+      {
+        id: 2,
+        title: "Software Engineer",
+        location: "Torana Inc., Stamford, CT",
+        description:
+          "Developed a secure sandboxed environment using Java Spring Boot, Docker, and OAuth2/JWT, leading to a 30% increase in client satisfaction. Achieved SOC 2 certification within 6 months by leading cross-functional teams.",
+        date: "Jun 2023 - Jun 2024",
+        icon: "work",
+      },
+      
+      {
+        id: 3,
+        title: "Software Developer Engineer Intern",
+        location: "Amazon.com, Seattle, WA",
+        description:
+          "Developed a project plan using TypeScript and AWS Step Functions, reducing manual effort for AWS-Backint backup services by 40%. Spearheaded the development of API systems using Kotlin and C# to enhance system efficiency.",
+        date: "May 2022 - Aug 2022",
+        icon: "work",
+      },
+      {
+        id: 4,
+        title: "M.S. Computer Science (Cybersecurity)",
+        location: "Arizona State University, Tempe, AZ",
+        description: "Graduated with a focus on cybersecurity, specializing in secure application development and threat modeling.",
+        date: "Aug 2021 - May 2023",
+        icon: "school",
+      },
+      {
+        id: 5,
+        title: "Software Developer",
+        location: "Torana Inc., Nagpur, India",
+        description:
+          "Automated data collection and reporting systems using Java Spring Boot, reducing manual effort by 20% and saving marketers 16 hours per month. Improved system performance by implementing parallel and batch processing, reducing data ingestion time by 36%.",
+        date: "Dec 2019 - July 2021",
+        icon: "work",
+      },
+      {
+        id: 6,
+        title: "Software Developer",
+        location: "Cognizant, Chennai, India",
+        description:
+          "Implemented complex web UI designs using ASP.NET, resulting in a 40% increase in user engagement. Automated SQL queries and report generation using VBA and PowerShell, reducing manual effort by 95%.",
+        date: "Nov 2018 - Oct 2019",
+        icon: "work",
+      },
+      {
+        id: 7,
+        title: "B.Tech. Electronics and Telecommunication",
+        location: "College of Engineering Pune, Pune, India",
+        description: "Graduated with expertise in telecommunications systems and embedded systems programming.",
+        date: "Aug 2014 - May 2018",
+        icon: "school",
+      },
 ];
 
 export const ExperienceSection: React.FC = () => {
@@ -82,38 +88,43 @@ export const ExperienceSection: React.FC = () => {
   const schoolIconStyles = { background: "#f9c74f", color: "#fff" };
 
   return (
-    <div className="py-16 lg:py-24">
-      <h1 className="text-3xl font-bold text-center mb-10 font-serif">Experience</h1>
-      <VerticalTimeline>
-        {timelineElements.map((element) => {
-          const isWorkIcon = element.icon === "work";
-          const showButton =
-            element.buttonText !== undefined && element.buttonText !== null && element.buttonText !== "";
-
-          return (
-            <VerticalTimelineElement
-              key={element.id}
-              date={element.date}
-              iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
-              icon={isWorkIcon ? <WorkIcon className="h-6 w-6" /> : <SchoolIcon className="h-6 w-6" />}
-            >
-              <h3 className="text-lg font-semibold font-serif">{element.title}</h3>
-              <h5 className="text-sm text-gray-500 font-serif">{element.location}</h5>
-              <p className="mt-2 text-gray-700">{element.description}</p>
-              {showButton && (
-                <a
-                  className={`mt-4 inline-block px-4 py-2 text-sm text-white rounded hover:opacity-90 ${
-                    isWorkIcon ? "bg-green-500" : "bg-yellow-500"
-                  }`}
-                  href="/"
-                >
-                  {element.buttonText}
-                </a>
-              )}
-            </VerticalTimelineElement>
-          );
-        })}
-      </VerticalTimeline>
-    </div>
+    <section className="py-20 lg:py-28">
+        <SectionHeader 
+            eyebrow=""
+            title="Experience & Educations" 
+            description=""
+        />
+            <div className="mt-20 flex flex-col">
+                <div className="p-3">
+                    <Card
+                        className="w-full max-w-7xl mx-auto"
+                    >
+                        <VerticalTimeline
+                            lineColor="gray">
+                        {timelineElements.map((element) => {
+                            const isWorkIcon = element.icon === "work";
+                            return (
+                            <VerticalTimelineElement
+                                key={element.id}
+                                date={element.date}
+                                iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
+                                icon={<>{isWorkIcon ? <WorkIcon className="h-6 w-6" /> : <SchoolIcon className="h-6 w-6" />}</>}
+                                contentStyle={{
+                                    background: "#374151", // Example background colors for work and school
+                                    borderRadius: "8px", // Adjust border radius if needed
+                                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.8)",
+                                  }}
+                            >
+                                <h3 className="text-lg font-serif">{element.title}</h3>
+                                <h5 className="text-sm text-gray-400 font-serif">{element.location}</h5>
+                                <p className="mt-2 text-gray-300 font-sans">{element.description}</p>
+                            </VerticalTimelineElement>
+                            );
+                        })}
+                        </VerticalTimeline>
+                    </Card>
+                </div>
+            </div>
+      </section>
   );
 };

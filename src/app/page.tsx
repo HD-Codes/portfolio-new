@@ -6,15 +6,18 @@ import { TestimonialsSection } from "@/sections/Testimonials";
 import { AboutSection } from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
+import { ExperienceSection } from "@/sections/Exprience";
 
 export default function Home() {
   return (
     <div>
       <Header />
       <HeroSection />
-      <ProjectsSection />
+      <ExperienceSection />
+      {/* <ProjectsSection /> */}
       <TapeSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
+      
       <AboutSection />
       <ContactSection />
       <Footer />

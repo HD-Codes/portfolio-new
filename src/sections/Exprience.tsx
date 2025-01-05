@@ -88,7 +88,7 @@ export const ExperienceSection: React.FC = () => {
   const schoolIconStyles = { background: "#f9c74f", color: "#fff" };
 
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28" id="experience">
         <SectionHeader 
             eyebrow=""
             title="Experience & Educations" 

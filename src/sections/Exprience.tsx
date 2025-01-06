@@ -90,9 +90,9 @@ export const ExperienceSection: React.FC = () => {
   return (
     <section className="py-20 lg:py-28" id="experience">
         <SectionHeader 
-            eyebrow=""
-            title="Experience & Educations" 
-            description=""
+          eyebrow="Professional Experience & Education"
+          title="My Journey: From Learning to Leading"
+          description="Explore my career path, from academic foundations to professional milestones, highlighting achievements that showcase my dedication to building secure, scalable, and efficient solutions."
         />
             <div className="mt-20 flex flex-col">
                 <div className="p-3">

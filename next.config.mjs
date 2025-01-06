@@ -35,6 +35,11 @@ const nextConfig = {
             },
           },
         },
+      },
+      // Add rule for PDF files
+      {
+        test: /\.pdf$/,
+        type: "asset/resource", // Treat PDFs as static assets
       }
     );
 
